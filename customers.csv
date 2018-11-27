@@ -1,0 +1,6 @@
+cust_name,organization,role,email,bldgroom,address,acc_no,city,state,zipcode,phone_number
+cust1,org1,role1,email1@gmail.com,1,add1,1,city1,ne,1000,100000000
+cust2,org2,role2,email2@gmail.com,2,add2,2,city2,ne,2000,200000000
+cust3,org3,role3,email3@gmail.com,3,add3,3,city3,ne,3000,300000000
+cust4,org4,role4,email4@gmail.com,4,add4,4,city4,ne,4000,400000000
+cust5,org5,role5,email5@gmail.com,5,add5,5,city5,ne,5000,100000000
