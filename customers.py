@@ -28,6 +28,11 @@ class MSA(unittest.TestCase):
        driver.get("https://mavfs.herokuapp.com/")
        time.sleep(2)
        assert "logged in "
+       driver.get('https://mavfs.herokuapp.com/admin/')
+       time.sleep(5)
+       elem = driver.find_element_by_xpath(
+           '//*[@id="content-main"]/div[2]/table/tbody/tr[1]/td[1]/a').click()  #
+       time.sleep(5)
        data = open('customers.csv')
        datareader = csv.reader(data)
        for row in datareader:
@@ -45,11 +50,7 @@ class MSA(unittest.TestCase):
                state = row[8]
                zipcode = row[9]
                phone = row[10]
-               driver.get('https://mavfs.herokuapp.com/admin/')
-               time.sleep(5)
-               elem = driver.find_element_by_xpath(
-                   '//*[@id="content-main"]/div[2]/table/tbody/tr[1]/td[1]/a').click()  #
-               time.sleep(5)
+               time.sleep(15)
                elem = driver.find_element_by_id("id_cust_name")
                elem.send_keys(name)
                time.sleep(0)
@@ -85,9 +86,11 @@ class MSA(unittest.TestCase):
                time.sleep(5)
                elem.send_keys(Keys.RETURN)
                time.sleep(10)
-               driver.get("https://mavfs.herokuapp.com/")
-               time.sleep(0)
-
+               elem=driver.find_element_by_xpath('//*[@id="content-main"]/ul/li/a').click()
+       driver.get("https://mavfs.herokuapp.com/")
+       time.sleep(0)
+       elem = driver.find_element_by_xpath('//*[@id="app-layout"]/div/div/div/div[2]/div/div/div/div/div[1]/div/div/p[2]/a').click()  #
+       time.sleep(15)
 
    def tearDown(self):
        self.driver.close()
